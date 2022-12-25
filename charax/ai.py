@@ -4,9 +4,10 @@ import time
 from typing import List
 
 import openai
-from logger import logger
-from message import Utterance
-from setting import config
+
+from charax.logger import logger
+from charax.message import Utterance
+from charax.setting import config
 
 
 def get_prompt(messages: List[Utterance], bot_name: str):

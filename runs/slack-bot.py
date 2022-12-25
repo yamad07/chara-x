@@ -5,22 +5,20 @@ import time
 from typing import List
 
 import requests
-from ai import create_response
-from logger import logger
-from message import Utterance
 from PIL import Image
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from slack_sdk import WebClient
 
-slack_url = "https://slack.com/api/conversations.replies"
+from charax.ai import create_response
+from charax.logger import logger
+from charax.message import Utterance
 
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
+client = WebClient(os.environ.get("SLACK_BOT_TOKEN"))
 
 
 def replace_id_to_name(user_id: str) -> str:
-    url = "https://slack.com/api/conversations.replies"
-    client = WebClient(os.environ.get("SLACK_BOT_TOKEN"))
     result = client.users_info(user=user_id)
     display_name = result["user"]["profile"]["display_name"]
     if display_name != "":
@@ -30,14 +28,8 @@ def replace_id_to_name(user_id: str) -> str:
 
 
 def get_replies(channel: str, ts: str) -> List[Utterance]:
-    url = "https://slack.com/api/conversations.replies"
-    headers = {"Authorization": "Bearer " + os.environ.get("SLACK_BOT_TOKEN")}
-    params = {
-        "channel": channel,
-        "ts": ts,
-    }
-    r = requests.get(url, headers=headers, params=params)
-    messages = r.json()["messages"]
+    result = client.conversations_replies(channel=channel, ts=ts)
+    messages = result["messages"]
 
     return [
         {"user": replace_id_to_name(message["user"]), "message": message["text"]}

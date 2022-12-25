@@ -1,8 +1,9 @@
 import logging
+import sys
 
-from ai import create_response
-from logger import logger
-from setting import config
+from charax.ai import create_response
+from charax.logger import logger
+from charax.setting import config
 
 if __name__ == "__main__":
     logger.setLevel(logging.ERROR)
