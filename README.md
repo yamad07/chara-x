@@ -4,7 +4,10 @@ CharaX is software that allows you to create a preference-configured chat AI.
 ## Getting Started
 
 ```
-cp .env .env.default // and write your configuration. you must set the value of `OPENAI_API_KEY`.
+cp .env .env.default
+// and write your configuration.
+// you must set the value of `OPENAI_API_KEY`.
+
 make run-console // run in console
 
 make run-slack // run in slack
