@@ -1,4 +1,5 @@
 # CharaX
+![charax](https://user-images.githubusercontent.com/20740529/209472454-652dcd1b-da8e-4903-830c-e61af8f729d2.png)
 CharaX is software that allows you to create a preference-configured chat AI.
 
 ## Getting Started
