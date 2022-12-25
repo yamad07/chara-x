@@ -1,0 +1,7 @@
+openai==0.25.0
+slack-bolt==1.16.1
+slack-sdk==3.19.5
+requests==2.26.0
+Pillow==8.3.0
+PyYAML==5.4.1
+python-json-logger==2.0.4
