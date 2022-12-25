@@ -13,7 +13,7 @@ make run-slack // run in slack
 ## Change your own setting
 Modify the setting.yaml file and rerun.
 
-```setting.yaml
+```yaml
 bot:
   context: SaaS事業を展開しているスタートアップ企業
   characters:
