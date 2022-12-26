@@ -7,4 +7,3 @@ services:
       - ./:/src
     env_file:
       - .env
-    command: runs/slack-bot.py

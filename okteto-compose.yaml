@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  ai:
+    build:
+      context: .
+    volumes:
+      - ./:/src
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - SLACK_BOT_USER_ID=${SLACK_BOT_USER_ID}
+    command: runs/slack-bot.py

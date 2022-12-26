@@ -1,6 +1,6 @@
 PHONY: run-slack
 run-slack:
-	docker-compose up
+	docker-compose run ai runs/slack-bot.py
 
 PHONY: run-console
 run-console:
