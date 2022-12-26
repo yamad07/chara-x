@@ -27,4 +27,25 @@ bot:
 ```
 
 ## Slack Bot Configuration
-WIP
+### 1. Create your Slack app
+Refer to [this document](https://slack.dev/bolt-python/ja-jp/tutorial/getting-started) to enable Socket Mode and grant the following permissions.
+```
+- channels:history
+- chat:write
+- group:history
+- im:history
+- mpim:history
+- users:read
+- users:write
+```
+
+Then, get an App-level token and a bot token.
+
+### 2. Sign up for [OpenAI](https://openai.com/)
+Create an OpenAI account and get an API token.
+
+### 3. Set the token of Slack bot and OpenAI as environment variables.
+Set the tokens and `user_id` of slack bot in the environment variable and execute.
+```
+make run-slack
+```
