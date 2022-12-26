@@ -25,6 +25,9 @@ bot:
   default: 任務達成。
 
 ```
+## Use as Template
+This is also released as a template project. Write your own setting.yaml and deploy it wherever you like.
+
 
 ## Slack Bot Configuration
 ### 1. Create your Slack app
@@ -49,3 +52,8 @@ Set the tokens and `user_id` of slack bot in the environment variable and execut
 ```
 make run-slack
 ```
+
+## Deployment
+Using [okteto](https://www.okteto.com/), you can quickly deploy an AI of your setting. When you deploy, set environment variables using the Okteto Secret.
+
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy)
